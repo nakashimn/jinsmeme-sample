@@ -1,0 +1,13 @@
+services:
+  jinsmeme-sample:
+    build: ./Dockerfile
+    container_name: jinsmeme-sample
+    hostname: jinsmeme-sample
+    shm_size: '1gb'
+    ports:
+      - 8080:80
+    volumes:
+      - $PWD/:/workspace:cached
+    environment:
+      TZ: Asia/Tokyo
+    tty: true
